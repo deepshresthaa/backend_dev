@@ -13,7 +13,10 @@ const PORT = process.env.PORT || 8000;
 
 //middlewares
 app.use(express.json());
-app.use(fileupload());
+app.use(fileupload({
+    useTempFiles : true,
+    tempFileDir : '/tmp/'
+}));
 //db and cloudinary connect
 dbConnect();
 cloudinaryConnect();

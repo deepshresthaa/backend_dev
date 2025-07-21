@@ -1,7 +1,15 @@
-const express=require("express");
-const { uploadImageController } = require("../controllers/file.controller");
-const router=express.Router();
+const express = require("express");
+const {
+  localFileUpload,
+  uploadSizeReducedImage,
+  uploadVideo,
+  uploadImage,
+} = require("../controllers/file.controller");
+const router = express.Router();
 
-router.post("/uploadImage",uploadImageController);
+router.post("/localFileUpload", localFileUpload);
+router.post("/uploadImage", uploadImage);
+router.post("/uploadVideo", uploadVideo);
+router.post("/uploadSizeReducedImage", uploadSizeReducedImage);
 
-module.exports=router;
+module.exports = router;
