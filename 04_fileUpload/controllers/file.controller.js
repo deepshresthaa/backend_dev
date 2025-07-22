@@ -1,5 +1,7 @@
 const cloudinary = require("cloudinary");
 const fileCollection = require("../models/file.model");
+const nodemailer = require("nodemailer");
+
 exports.localFileUpload = async (req, res) => {
   const file = req.files.file;
 
