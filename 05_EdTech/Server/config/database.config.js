@@ -9,5 +9,7 @@ exports.connect = () => {
     })
     .catch((e) => {
       console.log("Error connected to DB.");
+      console.error(e);
+      process.exit(1);
     });
 };
